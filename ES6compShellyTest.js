@@ -1,5 +1,5 @@
 // Shelly Compatibility Test + Auto Device Info + Endpoint URLs
-// Safe v1.7 – adds Shelly.GetDeviceInfo() to show firmware and device id
+// Safe v1.71 – adds Shelly.GetDeviceInfo() to show firmware and device id
 
 let results = [];
 let report = "";
@@ -55,6 +55,31 @@ testFeature("eval('function* g(){}')", "generator");
 testFeature("Promise.resolve(1)", "Promise", "typeof Promise!=='undefined'");
 testFeature("Symbol('x')", "Symbol", "typeof Symbol!=='undefined'");
 testFeature("eval('123n')", "BigInt");
+/*
+// === Additional ES6 Syntax and Safe Methods (based on Denis' V2) ===
+// --- Syntax extensions ---
+testFeature("let {a,b} = {a:1,b:2}", "Object destructuring");
+testFeature("[...[1,2,3]]", "Spread operator");
+testFeature("function f(x=5){return x}", "Default parameters");
+testFeature("function f(...args){return args.length}", "Rest parameters");
+testFeature("let x=1; ({x})", "Enhanced object literal");
+
+// --- Array additions ---
+testFeature("Array.from([1,2,3])", "Array.from()");
+testFeature("Array.of(1,2,3)", "Array.of()");
+testFeature("[1,2,3].fill(0)", "Array.fill()");
+
+// --- String methods ---
+testFeature("'abc'.startsWith('a')", "String.startsWith()");
+testFeature("'abc'.endsWith('c')", "String.endsWith()");
+testFeature("'abc'.includes('b')", "String.includes()");
+testFeature("'a'.repeat(3)", "String.repeat()");
+testFeature("' a '.trim()", "String.trim()");
+*/
+// --- Other safe tests ---
+testFeature("try {throw 'x'} catch(e){} finally{}", "try/catch/finally");
+testFeature("JSON.parse('{\"x\":1}')", "JSON.parse()");
+
 
 print("Shelly JS Compatibility Test Done.");
 print("Compact:", report);
@@ -126,8 +151,8 @@ HTTPServer.registerEndpoint("es6html", function(req, res) {
     html += ".ok{color:green;font-weight:bold}.no{color:red;font-weight:bold}.decl{color:orange;font-weight:bold}";
     html += "h1{font-size:18px;margin-top:0}</style></head><body>";
 
-    html += "<h1>🧩 Shelly JavaScript Compatibility Matrix</h1>";
-    html += "<p><b>Firmware:</b> " + (info.ver || "-") +
+    html += "<h1>🧩 Shelly JS Compatibility Matrix</h1>";
+    html += "<p><b>Fw:</b> " + (info.ver || "-") +
             " (" + (info.fw || "-") + ") | <b>Device:</b> " +
             (info.model || "-") + " (" + (info.id || info.mac || "-") + ")</p>";
     html += "<table><tr><th>#</th><th>Feature / API</th><th>Result</th><th>Support</th><th>Notes</th></tr>";
@@ -142,11 +167,34 @@ HTTPServer.registerEndpoint("es6html", function(req, res) {
       html += "<tr><td>" + (j + 1) + "</td><td>" + r.feature + "</td><td class='" + cls + "'>" + r.status + "</td><td class='" + cls + "'>" + r.level + "</td><td>" + note + "</td></tr>";
     }
 
-    html += "</table><p><b>Total:</b> " + results.length + " | ✅ " + okCount + " OK, ❌ " + failCount + " NO</p>";
-    html += "<h3>📘 Summary</h3><p>Compatibility ≈ ECMAScript 5 (2009) + partial ES6 (2015).<br>";
-    html += "Full support: map, filter, every, some, forEach, Object.assign, JSON.stringify.<br>";
-    html += "Declared only: Promise, Symbol.<br>";
-    html += "Missing: arrow functions, classes, template strings, reduce, find*, includes*, BigInt, etc.</p>";
+
+html += "</table><p><b>Total:</b> " + results.length +
+        " | ✅ " + okCount + " OK, ❌ " + failCount + " NO</p>";
+
+// --- Dynamic summary based on real results ---
+var okList = [], declList = [], noList = [];
+for (var k = 0; k < results.length; k++) {
+  var rr = results[k];
+  if (rr.status === "OK") okList.push(rr.feature);
+  else if (rr.level === "Declared") declList.push(rr.feature);
+  else noList.push(rr.feature);
+}
+
+// Try to guess ES level by ratio
+var esLevel = "ECMAScript 5 (2009)";
+if (okCount > results.length * 0.6) esLevel = "ECMAScript 5 + partial ES6 (2015)";
+if (okCount > results.length * 0.8) esLevel = "ECMAScript 6 (2015) level features";
+
+html += "<h3>📘 Summary</h3>";
+html += "<p>Detected compatibility ≈ " + esLevel + ".<br>";
+if (okList.length)
+  html += "<b>Full support:</b> " + okList.slice(0, 7).join(", ") + (okList.length > 7 ? ", ..." : "") + ".<br>";
+if (declList.length)
+  html += "<b>Declared only:</b> " + declList.join(", ") + ".<br>";
+if (noList.length)
+  html += "<b>Missing:</b> " + noList.slice(0, 8).join(", ") + (noList.length > 8 ? ", ..." : "") + ".";
+html += "</p>";
+
     html += "</body></html>";
 
     res.code = 200;
