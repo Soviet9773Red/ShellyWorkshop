@@ -45,7 +45,7 @@ Missing: arrow functions, classes, template literals, `reduce`, `find*`, `includ
 
 ### 🖥️ Installation
 1. Open the Shelly Web UI → **Scripts** → **Add Script**  
-2. Paste the content of `ES6compShellyTest.js`  
+2. Paste the content of the latest `ES6compShellyTestV1.83.js`  
 3. Click **Start**  
 4. Watch the console for your device IP and endpoint URLs  
 5. Open the HTML endpoint in a browser to view the compatibility matrix
