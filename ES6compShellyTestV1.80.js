@@ -1,3 +1,9 @@
+/*
+ * ES6compShellyTest v1.80
+ * (c) 2025 Alexander Soviet9773Red | https://github.com/Soviet9773Red
+ * Developed during Shelly Scripting Advanced – October 2025
+ * MIT License
+*/
 // Shelly Compatibility Test + Auto Device Info + Endpoint URLs
 // Safe v1.80 – adds Shelly.GetDeviceInfo() to show firmware and device id
 // A bug with script number
@@ -253,6 +259,7 @@ Timer.set(1500, false, function () {
     Timer.set(1000, false, registerSplitJSON);
   }
 });
+
 
 
 
