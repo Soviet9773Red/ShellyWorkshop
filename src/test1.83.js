@@ -1,4 +1,4 @@
-// 1.82
+// 1.83
 
 fetch("/rpc/Shelly.GetDeviceInfo")
   .then(r => r.json())
@@ -69,4 +69,5 @@ Promise.all([
   console.log("⚠️ Error loading ES6 test data:", err);
   document.getElementById('sum').innerHTML =
     `<b style="color:#e74c3c;">Error loading JSON data</b><br>${err}`;
+
 });
