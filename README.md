@@ -1,4 +1,7 @@
-# ShellyWorkshop2025 - Question to Denis
+## ShellyWorkshop2025 - Question to Denis
+
+MIT License: © 2025 Alexander (Soviet9773Red)
+Developed as part of Shelly Scripting Advanced – October 2025.
 
 ### Purpose
 Shelly devices use a lightweight JavaScript engine (MJS) that supports only a subset of ES5/ES6.  
