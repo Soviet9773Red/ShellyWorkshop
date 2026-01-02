@@ -1,0 +1,57 @@
+Shelly Scripting (MJS) vs JavaScript Features (ver.1.83, bld 2026-01-02T11:59)
+Device: SNPL-00112EU (shellyplusplugs-b0b21c1aa8e4)
+Firmware: 1.7.1 (20250924-062721/1.7.1-gd336f31)
+#	Feature	Result	Support
+1	let/const	✅ OK	Full
+2	function()	✅ OK	Full
+3	Arrow =>	❌ NO	Missing
+4	Template `${}`	❌ NO	Missing
+5	Array.map()	✅ OK	Full
+6	Array.filter()	✅ OK	Full
+7	Array.reduce()	❌ NO	Missing
+8	Array.forEach()	✅ OK	Full
+9	Array.includes()	❌ NO	Missing
+10	Array.find()	❌ NO	Missing
+11	Array.every()	✅ OK	Full
+12	Array.some()	✅ OK	Full
+13	Array.from()	❌ NO	Missing
+14	Array.of()	❌ NO	Missing
+15	Array.fill()	❌ NO	Missing
+16	Array.isArray()	✅ OK	Full
+17	Object.assign()	✅ OK	Full
+18	Object.keys()	✅ OK	Full
+19	Object.values()	❌ NO	Missing
+20	Object.entries()	❌ NO	Missing
+21	JSON.stringify()	✅ OK	Full
+22	JSON.parse()	✅ OK	Full
+23	Object.create(null)	✅ OK	Full
+24	String.startsWith()	❌ NO	Missing
+25	String.endsWith()	❌ NO	Missing
+26	String.includes()	❌ NO	Missing
+27	String.repeat()	❌ NO	Missing
+28	String.trim()	✅ OK	Full
+29	String.padStart()	❌ NO	Missing
+30	String.padEnd()	❌ NO	Missing
+31	class syntax	❌ NO	Missing
+32	generator	❌ NO	Missing
+33	Promise	❌ NO	Missing
+34	Symbol	❌ NO	Missing
+35	BigInt	❌ NO	Missing
+36	Object destructuring	❌ NO	Missing
+37	Spread operator	❌ NO	Missing
+38	Default parameters	❌ NO	Missing
+39	Rest parameters	❌ NO	Missing
+40	Enhanced object literal	❌ NO	Missing
+41	try/catch/finally	✅ OK	Full
+42	Date.getFullYear()	✅ OK	Full
+43	Date.toISOString()	✅ OK	Full
+44	Date.now()	✅ OK	Full
+45	Math.trunc()	❌ NO	Missing
+46	Math.sign()	✅ OK	Full
+47	Math.round()	✅ OK	Full
+48	Number.isNaN()	❌ NO	Missing
+49	Number.isInteger()	❌ NO	Missing
+50	TypedArray	❌ NO	Missing
+51	ArrayBuffer	❌ NO	Missing
+Test results — Total: 51 | ✅ Full: 20 | ⚠️ Declared: 0 | ❌ Missing: 31
+JS Level: ECMAScript 3–5 (1999–2009)
