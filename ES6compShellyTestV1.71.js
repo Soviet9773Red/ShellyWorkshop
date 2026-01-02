@@ -1,3 +1,9 @@
+/*
+ * ES6compShellyTest v1.71
+ * (c) 2025 Alexander Soviet9773Red | https://github.com/Soviet9773Red
+ * Developed during Shelly Scripting Advanced – October 2025
+ * MIT License
+*/
 // Shelly Compatibility Test + Auto Device Info + Endpoint URLs
 // Safe v1.71 – adds Shelly.GetDeviceInfo() to show firmware and device id
 
@@ -219,4 +225,5 @@ html += "</p>";
 
 // Wait for RPC to complete, then register endpoints
 Timer.set(1000, false, registerEndpoints);
+
 
