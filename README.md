@@ -1,6 +1,6 @@
 ## ShellyWorkshop2025 - Question to Denis
 
-MIT License: © 2025 Alexander (Soviet9773Red)
+**MIT License:** © 2025 Alexander (Soviet9773Red)
 Developed as part of Shelly Scripting Advanced – October 2025.
 
 ### Purpose
