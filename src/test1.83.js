@@ -1,5 +1,10 @@
+/*
+ * ES6compShellyTest v1.83
+ * (c) 2025 Alexander Soviet9773Red | https://github.com/Soviet9773Red
+ * Developed during Shelly Scripting Advanced – October 2025
+ * MIT License
+*/
 // 1.83
-
 fetch("/rpc/Shelly.GetDeviceInfo")
   .then(r => r.json())
   .then(info => {
@@ -71,3 +76,4 @@ Promise.all([
     `<b style="color:#e74c3c;">Error loading JSON data</b><br>${err}`;
 
 });
+
