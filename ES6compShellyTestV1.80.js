@@ -1,6 +1,6 @@
 // Shelly Compatibility Test + Auto Device Info + Endpoint URLs
 // Safe v1.80 – adds Shelly.GetDeviceInfo() to show firmware and device id
-
+// A bug with script number
 const sInfo = {
   name: "Shelly JS Compatibility Matrix",
   ver: "1.80",
@@ -253,5 +253,6 @@ Timer.set(1500, false, function () {
     Timer.set(1000, false, registerSplitJSON);
   }
 });
+
 
 
