@@ -4,6 +4,7 @@
  * Developed during Shelly Scripting Advanced – October 2025
  * MIT License
 */
+
 // Shelly Compatibility Test + Auto Device Info + Endpoint URLs
 // Safe v1.83 – adds Shelly.GetDeviceInfo() to show firmware and device id
 
@@ -300,5 +301,6 @@ print(sInfo.name,sInfo.ver, "Done.", JSON.stringify({
     Timer.set(1000, false, registerSplitJSON);
   }
 });
+
 
 
