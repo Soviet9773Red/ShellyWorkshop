@@ -1,0 +1,77 @@
+Shelly Scripting vs JS Features test v.1.85, 2026-01-05T13:44
+Device: SNPL-00112EU shellyplusplugs-b0b21c1aa8e4
+Fw: 20250924-062721/1.7.1-gd336f31
+#	Feature	Result	Support
+1	let/const	✅ OK	Full
+2	function()	✅ OK	Full
+3	Arrow =>	❌ NO	Ref.Error
+4	Template `${}`	❌ NO	SyntaxError
+5	Array.map()	✅ OK	Full
+6	Array.filter()	✅ OK	Full
+7	Array.reduce()	❌ NO	Error
+8	Array.forEach()	✅ OK	Full
+9	Array.includes()	❌ NO	Error
+10	Array.find()	❌ NO	Error
+11	Array.every()	✅ OK	Full
+12	Array.some()	✅ OK	Full
+13	Array.from()	❌ NO	Error
+14	Array.of()	❌ NO	Error
+15	Array.fill()	❌ NO	Error
+16	Array.isArray()	✅ OK	Full
+17	Array.indexOf()	✅ OK	Full
+18	Array.join()	✅ OK	Full
+19	Array.slice()	✅ OK	Full
+20	Array.concat()	❌ NO	Error
+21	Object.assign()	✅ OK	Full
+22	Object.keys()	✅ OK	Full
+23	Object.values()	❌ NO	Error
+24	Object.entries()	❌ NO	Error
+25	JSON.stringify()	✅ OK	Full
+26	JSON.parse()	✅ OK	Full
+27	Object.create(null)	✅ OK	Full
+28	Object.freeze()	❌ NO	Error
+29	Object.seal()	❌ NO	Error
+30	hasOwnProperty()	✅ OK	Full
+31	String.startsWith()	❌ NO	Error
+32	String.endsWith()	❌ NO	Error
+33	String.includes()	❌ NO	Error
+34	String.repeat()	❌ NO	Error
+35	String.trim()	✅ OK	Full
+36	String.padStart()	❌ NO	Error
+37	String.padEnd()	❌ NO	Error
+38	String.charAt()	✅ OK	Full
+39	String.charCodeAt()	✅ OK	Full
+40	String.toUpperCase()	✅ OK	Full
+41	String.toLowerCase()	✅ OK	Full
+42	String.toString()	✅ OK	Full
+43	class syntax	❌ NO	SyntaxError
+44	generator	❌ NO	SyntaxError
+45	Promise	❌ NO	Ref.Error
+46	Symbol	❌ NO	Ref.Error
+47	BigInt	❌ NO	Ref.Error
+48	Object destructuring	❌ NO	Ref.Error
+49	Spread operator	❌ NO	SyntaxError
+50	Default parameters	❌ NO	SyntaxError
+51	Rest parameters	❌ NO	SyntaxError
+52	Enhanced object literal	❌ NO	SyntaxError
+53	try/catch/finally	✅ OK	Full
+54	Date.getFullYear()	✅ OK	Full
+55	Date.toISOString()	✅ OK	Full
+56	Date.now()	✅ OK	Full
+57	Date.getTime()	✅ OK	Full
+58	Date.toUTCString()	✅ OK	Full
+59	Math.trunc()	❌ NO	Error
+60	Math.sign()	✅ OK	Full
+61	Math.round()	✅ OK	Full
+62	Math.max()	✅ OK	Full
+63	Math.min()	✅ OK	Full
+64	Math.abs()	✅ OK	Full
+65	Number.isNaN()	❌ NO	Error
+66	Number.isInteger()	❌ NO	Error
+67	Number.parseInt()	❌ NO	Error
+68	Number.parseFloat()	❌ NO	Error
+69	TypedArray	❌ NO	Ref.Error
+70	ArrayBuffer	❌ NO	Ref.Error
+71	Err. obj. allocation ☠	✅ OK	Full
+Results: Total: 71 | ✅ Full: 35 | ❌ Failed: 36
+JS support level: ECMAScript 3–5, 1999–2009
