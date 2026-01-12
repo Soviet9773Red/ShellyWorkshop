@@ -132,7 +132,7 @@ Shelly Scripting vs JS Features test v. 1.85 Done.
 1. Open **Shelly Web UI**
 2. Go to **Scripts**
 3. Add new script
-4. Paste content of `ES6compShellyTest v1.85`
+4. Paste content of [`ES6compShellyTest v1.85`](https://github.com/Soviet9773Red/ShellyWorkshop/blob/main/ES6compShellyTest1.85.js)
 5. Save and start the script
 6. Open printed URLs in a browser
 
