@@ -25,7 +25,7 @@ Official documentation describes this only partially, which leads to trial-and-e
 
 ## Key Features (v1.85)
 
-- Tests **80+ JavaScript features**
+- Tests **70+ JavaScript features**
   - syntax (`let`, `const`, arrow, class, spread, destructuring)
   - Array / Object / String APIs
   - Date, Math, Number APIs
