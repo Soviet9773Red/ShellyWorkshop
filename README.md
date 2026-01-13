@@ -7,7 +7,6 @@ JavaScript compatibility and runtime diagnostics tool for **Shelly Gen2 / Gen3 /
 
 This script performs a controlled set of syntax and API tests to determine which parts of **ES5 / ES6** are actually supported by the built-in Shelly JavaScript engine (MJS), which features are only declared, and which are completely missing.
 
----
 
 ## Purpose
 
@@ -21,7 +20,6 @@ Official documentation describes this only partially, which leads to trial-and-e
 - compact HTML UI for manual inspection  
 - safe execution within Shelly memory and HTTP limits  
 
----
 
 ## Key Features (v1.85)
 
@@ -48,7 +46,7 @@ Official documentation describes this only partially, which leads to trial-and-e
 - **GZIP-compressed HTML + JS UI** served directly from Shelly
 - Console output with ready-to-click endpoint URLs
 
----
+
 
 ## Compatibility Summary Logic
 
@@ -60,7 +58,7 @@ Based on the number of successful tests, the script estimates approximate ECMASc
 
 This is an **estimation**, not a standards conformance claim.
 
----
+
 
 ## HTTP Endpoints
 
@@ -78,7 +76,7 @@ Each endpoint returns:
 
 ```json
 {
-  "t": 82,
+  "t": 71,
   "p": "A",
   "r": [
     { "f": "Array.map()", "s": "OK", "sup": 0 }
@@ -86,7 +84,14 @@ Each endpoint returns:
 }
 ```
 
----
+t   – total number of tested features  
+p   – report segment identifier (A, B, C)  
+r   – array of test results  
+
+f   – feature name  
+s   – execution status (OK / NO)  
+sup – error / support code (0 = OK, 1–9 = error type)
+
 
 ### GZIP Web UI
 
@@ -103,7 +108,7 @@ Assets are delivered via GZIP-compressed base64 payloads:
 
 No external hosting required.
 
----
+
 
 ## Console Output
 
@@ -125,7 +130,7 @@ Splitted JSON endpoints:
 Shelly Scripting vs JS Features test v. 1.85 Done.
 ```
 
----
+
 
 ## Installation
 
@@ -136,7 +141,7 @@ Shelly Scripting vs JS Features test v. 1.85 Done.
 5. Save and start the script
 6. Open printed URLs in a browser
 
----
+
 
 ## Supported Devices
 
@@ -144,7 +149,7 @@ Shelly Scripting vs JS Features test v. 1.85 Done.
 - Shelly Pro series (Gen3)
 - Firmware >= 1.6 recommended
 
----
+
 
 ## Limitations
 
@@ -153,7 +158,7 @@ Shelly Scripting vs JS Features test v. 1.85 Done.
 - Not a full JS conformance test
 - Results may vary slightly across firmware versions
 
----
+
 
 ## Use Cases
 
@@ -163,7 +168,10 @@ Shelly Scripting vs JS Features test v. 1.85 Done.
 - Validate assumptions before refactoring code
 - Educational diagnostics for Shelly scripting workshops
 
----
+Result:<br>
+
+<img src="https://github.com/Soviet9773Red/ShellyWorkshop/blob/main/img/view.jpg?raw=true" width="827">
+
 
 ## License
 
