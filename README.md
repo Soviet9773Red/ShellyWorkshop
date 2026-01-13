@@ -82,7 +82,9 @@ Each endpoint returns:
     { "f": "Array.map()", "s": "OK", "sup": 0 }
   ]
 }
+```
 
+```
 t   – total number of tested features  
 p   – report segment identifier (A, B, C)  
 r   – array of test results  
