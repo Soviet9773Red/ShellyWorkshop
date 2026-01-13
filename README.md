@@ -1,4 +1,4 @@
-## Shelly Workshop 2025 - ( question to Denis )
+## Shelly Workshop 2025 ( question to Denis )
 
 **MIT License:** © 2025 Alexander (Soviet9773Red)
 # ES6compShellyTest v1.85
@@ -82,15 +82,17 @@ Each endpoint returns:
     { "f": "Array.map()", "s": "OK", "sup": 0 }
   ]
 }
-```
 
 t   – total number of tested features  
 p   – report segment identifier (A, B, C)  
 r   – array of test results  
 
 f   – feature name  
-s   – execution status (OK / NO)  
-sup – error / support code (0 = OK, 1–9 = error type)
+s   – execution status (OK/NO)  
+sup – error/support code (0 = OK, 1–9 = error type)
+```
+
+This JSON format is intended for diagnostic purposes only. It is optimized for Shelly runtime and HTTP limitations and should not be treated as a stable API contract. The structure may change between versions.
 
 
 ### GZIP Web UI
