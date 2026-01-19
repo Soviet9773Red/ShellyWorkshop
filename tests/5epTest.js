@@ -49,7 +49,7 @@ function createTestEndpoint(eP, defaultLength) {
 	// end of HTML
     html += "</body></html>";
     // Server-side calculates and displays the final HTML length and remaining bytes
-	var HL = html.length;
+	let HL = html.length;
 	print("[EP " + eP + "] HTML.body length: " + HL + " bytes, remaining: " + (maxL - HL));
     res.body = html;
     res.code = 200;
@@ -58,14 +58,14 @@ function createTestEndpoint(eP, defaultLength) {
 }
 
 // Specify test length
-const b = 3142;// html ~ 993
-// Create four endpoints "test1", "test2", "test3" and "test4" with the same default length
+const b = 3142;// html ~ 936
+// Create four endpoints ../script/nr "/", "/2", "/3", "/4" and "/5" 
 function iniHTTP_4ep() {
 createTestEndpoint("", b-3034);
 createTestEndpoint("2", (b+1));
 createTestEndpoint("3", (b+2));
 createTestEndpoint("4", (b+3));
-createTestEndpoint("5", (b+4)); // * length for test
+createTestEndpoint("5", (b+4)); // * length for the test
 }
 iniHTTP_4ep();
 // For convenience, print the endpoints' URLs in the console
